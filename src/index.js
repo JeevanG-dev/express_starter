@@ -5,7 +5,8 @@ import userRoutes from "./routes/userRoutes.js";
 import authRoute from "./routes/authRoute.js";
 import cookieParser from "cookie-parser";
 import { isLoggedIn } from "./validation/authValidation.js";
-import productRoute from './routes/productRoute.js'
+import productRoute from "./routes/productRoute.js";
+import cartRoute from "./routes/cartRoute.js";
 
 const app = express();
 
@@ -16,7 +17,8 @@ app.use(cookieParser());
 
 app.use("/users", userRoutes);
 app.use("/auth", authRoute);
-app.use("/products", productRoute );
+app.use("/products", productRoute);
+app.use("/carts", cartRoute);
 
 app.get("/ping", isLoggedIn, (req, res) => {
   console.log(req.cookies);

@@ -1,4 +1,5 @@
 
+import { cartRepository } from "../Repository/cartRepository.js";
 import { userRepositary } from "../Repository/userRepositary.js";
 
 export const registerUserService = async (userDetails) => {
@@ -18,6 +19,8 @@ export const registerUserService = async (userDetails) => {
     mobileNumber: userDetails.mobileNumber,
     password: userDetails.password,
   });
+
+  await cartRepository(createUserService ._id)
 
   return createUserService;
 }
