@@ -1,10 +1,7 @@
-
 import { cartRepository } from "../Repository/cartRepository.js";
 import { userRepositary } from "../Repository/userRepositary.js";
 
 export const registerUserService = async (userDetails) => {
-
-    
   const user = await userRepositary.findUser({
     email: userDetails.email,
     mobileNumber: userDetails.mobileNumber,
@@ -18,9 +15,10 @@ export const registerUserService = async (userDetails) => {
     lastName: userDetails.lastName,
     mobileNumber: userDetails.mobileNumber,
     password: userDetails.password,
+    role: userDetails.role,
   });
 
-  await cartRepository(createUserService ._id)
+  await cartRepository(createUserService._id);
 
   return createUserService;
-}
+};

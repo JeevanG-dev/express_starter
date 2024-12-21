@@ -14,14 +14,12 @@ export const cartRepository = async (userId) => {
 
 export const getCart = async (userId) => {
   try {
-    const response = await cart.findOne({user:userId});
+    const response = await cart.findOne({ user: userId });
     return response;
   } catch (error) {
-
     console.log(error);
-    
-throw new Error("No cart found")
 
-
+    throw new Error("No cart found");
   }
 };
+
